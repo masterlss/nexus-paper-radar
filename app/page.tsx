@@ -33,7 +33,18 @@ const radar = latestData as RadarData;
 const papers = radar.papers;
 const topics = ['全部', ...Array.from(new Set(papers.map((paper) => paper.topic)))];
 const issueDate = new Date(radar.generatedAt);
-const issueLabel = issueDate.toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' }).replaceAll('/', '.');
+const issueLabel = issueDate.toLocaleDateString('zh-CN', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  timeZone: 'Asia/Shanghai',
+}).replaceAll('/', '.');
+const issueTime = issueDate.toLocaleTimeString('zh-CN', {
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false,
+  timeZone: 'Asia/Shanghai',
+});
 
 export default function Home() {
   const [activeTopic, setActiveTopic] = useState('全部');
@@ -101,7 +112,7 @@ export default function Home() {
           <input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索论文、方法或标签" />
           <kbd>⌘ K</kbd>
         </label>
-        <div className="status-pill"><span /> 更新于 {issueDate.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}</div>
+        <div className="status-pill"><span /> 更新于 {issueTime}</div>
       </header>
 
       <div className="workspace" id="top">
