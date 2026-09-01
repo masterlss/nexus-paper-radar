@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-09-01",
+    "generatedAt": "2026-09-01T14:33:28+08:00",
+    "volume": "VOL. 003",
+    "stats": {
+      "fetched": 215,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "工业检索与推荐正在同时优化意图/行为对齐与在线计算预算：从 intent-aware SID、single-pass decoding，到按需多兴趣 ANN dispatch 与 co-engagement embedding。",
+    "focus": {
+      "paperId": "2608.29652",
+      "shortTitle": "ICEGR",
+      "readingQuestion": "验证三阶段独立贡献、线上实验口径与相关性/GMV之间的权衡",
+      "minutes": 9
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "广告与商业化",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-08-31",
     "generatedAt": "2026-08-31T09:00:56+08:00",
     "volume": "VOL. 002",

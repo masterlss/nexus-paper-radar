@@ -1,158 +1,178 @@
 {
-  "generatedAt": "2026-08-31T09:00:56+08:00",
-  "volume": "VOL. 002",
+  "generatedAt": "2026-09-01T14:33:28+08:00",
+  "volume": "VOL. 003",
   "stats": {
-    "fetched": 129,
+    "fetched": 215,
     "candidates": 12,
-    "recommended": 7
+    "recommended": 8
   },
-  "signal": "搜推广模型正在把算力花在更小、更结构化的中间空间：latent hub、target token compression、trajectory-conditioned query 与 evidence-dense shortlist。",
+  "signal": "工业检索与推荐正在同时优化意图/行为对齐与在线计算预算：从 intent-aware SID、single-pass decoding，到按需多兴趣 ANN dispatch 与 co-engagement embedding。",
   "focus": {
-    "paperId": "2608.25528",
-    "shortTitle": "TransRetrieval",
-    "readingQuestion": "重点验证同延迟口径、跨域消融与 scaling 曲线",
-    "minutes": 12
+    "paperId": "2608.29652",
+    "shortTitle": "ICEGR",
+    "readingQuestion": "验证三阶段独立贡献、线上实验口径与相关性/GMV之间的权衡",
+    "minutes": 9
   },
   "papers": [
     {
-      "id": "2608.25528",
-      "title": "TransRetrieval: Scaling Up Transformer-Based Retrieval for Industrial Recommendation",
+      "id": "2608.29652",
+      "title": "ICEGR: An Intent-Coherent End-to-End Generative Retrieval Framework for E-commerce Search",
       "topic": "搜索与排序",
-      "placement": "推荐召回",
-      "score": 59.4,
-      "date": "08.26",
-      "verdict": "修复异构 token 的尺度问题、压缩目标 token 并共享跨域数据，让 Transformer 推荐召回呈现稳定 compute scaling。",
-      "evidence": "400 亿交互 · Recall@2000 +19.3/+22.2pt · 线上收入 +2.53%",
+      "placement": "生成式召回",
+      "score": 60.7,
+      "date": "08.30",
+      "verdict": "把 query intent 贯穿 SID、SFT 与偏好优化，摘要声称百度电商线上 CTR、订单量与 GMV 均提升。",
+      "evidence": "Recall@20 +21.7% · NDCG@20 +26.6% · CTR +3.52% · 订单 +15.96% · GMV +7.53%",
       "tags": [
-        "Retrieval",
-        "Scaling",
+        "Generative Retrieval",
+        "Semantic ID",
         "Online A/B"
       ],
       "level": "精读",
-      "insight": "扩模型前先确认不同 field/token 的 norm 是否破坏注意力假设；压缩 candidate 侧计算可能比缩短历史更划算。",
-      "risk": "摘要未说明线上实验周期、流量规模，以及跨域负迁移情况。",
-      "question": "19–22 点 Recall 提升中，多少来自训练数据扩大，多少来自结构本身？",
-      "url": "https://arxiv.org/abs/2608.25528v1"
+      "insight": "生成式检索的意图一致性要贯穿表示构造、监督数据与业务偏好目标，不能只在最后一层补偿。",
+      "risk": "摘要未披露实验周期、流量、显著性、延迟，以及业务增益是否伴随相关性或长尾覆盖退化。",
+      "question": "三阶段各自贡献多少，线上 GMV 增益是否牺牲相关性、延迟或长尾覆盖？",
+      "url": "https://arxiv.org/abs/2608.29652v1"
     },
     {
-      "id": "2608.27991",
-      "title": "HubMixer: Progressive Latent Hub Mixing for Parameter-Efficient Feature Interaction",
-      "topic": "广告与商业化",
-      "placement": "特征交互",
-      "score": 75.2,
-      "date": "08.28",
-      "verdict": "先把异构特征归纳到少量 latent hubs 中交互，再按 token 选择性读回，降低参数与硬件成本。",
-      "evidence": "快手线上转化率 +5.48% · 已全量部署 · 工业离线 SOTA",
+      "id": "2608.30251",
+      "title": "SetMIR: Multi-Interest Retrieval as Set Prediction",
+      "topic": "推荐系统",
+      "placement": "多兴趣召回",
+      "score": 62.72,
+      "date": "08.31",
+      "verdict": "用 set prediction、Hungarian matching 与 presence/NMS，学习互异兴趣并按需发起 ANN 查询。",
+      "evidence": "ANN 查询 -33% · 整体 CVR +3.1% · 相对 I2I source CTR +44%、CVR +51%",
       "tags": [
-        "Feature Interaction",
-        "Latent Hub",
-        "Production"
+        "Multi-Interest",
+        "Set Prediction",
+        "ANN"
       ],
       "level": "精读",
-      "insight": "对 user、item、context 和统计量等异构特征，可将交互路由显式化，而非依赖全量 token mixing。",
-      "risk": "摘要没有给出参数量、吞吐、延迟、实验时长和各阶段独立贡献。",
-      "question": "Hub 数量增加后的收益/成本曲线，以及是否出现 feature-group specialization？",
-      "url": "https://arxiv.org/abs/2608.27991v1"
+      "insight": "将多兴趣数量和 ANN dispatch 变成可学习决策，可同时处理兴趣坍缩与固定召回预算浪费。",
+      "risk": "摘要未披露端到端延迟、候选覆盖、线上流量占比及 presence/NMS 阈值漂移。",
+      "question": "33% 查询节省在不同活跃度用户上的 p95/p99 与覆盖率变化如何？",
+      "url": "https://arxiv.org/abs/2608.30251v1"
     },
     {
-      "id": "2608.27912",
-      "title": "ITER: Interaction-Aware Retrieval for Agentic Search",
+      "id": "2608.30255",
+      "title": "CAMIE: Co-Engagement-Aware Multimodal Item Embeddings for Snap Dynamic Product Ads Retrieval",
       "topic": "大模型 × 搜广推",
-      "placement": "Agent 检索",
-      "score": 58.1,
-      "date": "08.28",
-      "verdict": "将主问题和此前 sub-query 纳入当前 query representation，并以 agent trajectory 构造相对监督。",
-      "evidence": "6 个 Agent Backbone · InfoSeek +7.5% · BrowseComp-Plus +13.5%",
+      "placement": "广告 I2I 召回",
+      "score": 64.23,
+      "date": "08.31",
+      "verdict": "用 co-engagement pair 微调统一多模态 backbone，以一个 checkpoint 替换两套线上内容 encoder。",
+      "evidence": "整体 DPA CTR +0.211% / CVR +1.911% · 多模态 control CVR +10.832% · 已部署",
       "tags": [
-        "Agentic Search",
-        "Dense Retrieval",
-        "Trajectory"
+        "Multimodal Retrieval",
+        "Co-Engagement",
+        "DPA"
       ],
-      "level": "泛读",
-      "insight": "多轮搜索不应退化成独立 query-doc pair；历史已读文档可成为天然去冗余负例。",
-      "risk": "目前是离线 benchmark 证据，跨真实线上分布的稳定性尚未披露。",
-      "question": "如何避免把后续仍需反复引用的核心证据误当作 redundancy negative？",
-      "url": "https://arxiv.org/abs/2608.27912v1"
+      "level": "精读",
+      "insight": "内容 embedding 可直接吸收转化相关共同行为，统一图文 checkpoint 还能减少索引与服务栈碎片。",
+      "risk": "co-engagement 可能混入曝光和活动偏差；摘要未说明负样本、去偏和冷启动分桶。",
+      "question": "整体流量增益中，表示质量与候选覆盖变化各贡献多少？",
+      "url": "https://arxiv.org/abs/2608.30255v1"
     },
     {
-      "id": "2608.25115",
-      "title": "Less can be More: Evidence Frontloading and Pressure-Adaptive RAG Budgeting",
-      "topic": "搜索与排序",
-      "placement": "RAG 重排",
-      "score": 58.3,
-      "date": "08.25",
-      "verdict": "先把互补证据排到前面，再按 reranker 与 LLM 的相对系统压力动态缩放 rerank budget。",
-      "evidence": "3 个 Multi-hop QA 数据集 · p95 延迟改善 · 服务模拟",
-      "tags": [
-        "RAG",
-        "Reranking",
-        "Latency"
-      ],
-      "level": "泛读",
-      "insight": "召回预算可以成为实时控制量，排序目标应显式奖励互补性与证据链覆盖。",
-      "risk": "服务证据来自模拟而非真实线上流量，控制器滞后和稳定性未知。",
-      "question": "预算控制器的时间粒度与 p95/p99 尾延迟保护策略如何设计？",
-      "url": "https://arxiv.org/abs/2608.25115v1"
-    },
-    {
-      "id": "2608.25735",
-      "title": "Pointing the Way, Hiding the Destination: Practical Private Dense Retrieval",
-      "topic": "搜索与排序",
-      "placement": "隐私检索",
-      "score": 58.1,
-      "date": "08.26",
-      "verdict": "用随机化 deep-hash code 先得到隐私短名单，再执行加密重排与 oblivious key transfer。",
-      "evidence": "25K–5.4M 文档 · NQ 268 万 Passage · 额外延迟 0.73s",
-      "tags": [
-        "Dense Retrieval",
-        "Privacy",
-        "RAG"
-      ],
-      "level": "泛读",
-      "insight": "通过学习式过滤，可把昂贵密码学操作限制在短名单，而非全库加密扫描。",
-      "risk": "10 Gbps 网络条件较理想；安全性与分布漂移需结合完整威胁模型审阅。",
-      "question": "在常见跨地域带宽下，通信成本是否会取代计算成为瓶颈？",
-      "url": "https://arxiv.org/abs/2608.25735v1"
-    },
-    {
-      "id": "2608.27746",
-      "title": "NormasTCU: A Portuguese IR Dataset and LLM-as-a-Judge Evaluation",
-      "topic": "搜索与排序",
-      "placement": "相关性评测",
-      "score": 60.3,
-      "date": "08.27",
-      "verdict": "LLM judge 在专业非英语语料上有评分偏差，但对 nDCG/MRR 的系统排序仍可能较稳定。",
-      "evidence": "14,469 文档 · Kappa 0.32–0.53 · Kendall's τ 多次 ≥0.90",
-      "tags": [
-        "LLM Judge",
-        "Qrels",
-        "Evaluation"
-      ],
-      "level": "泛读",
-      "insight": "LLM judge 更适合低成本比较系统排序，而非直接替代 pair-level 精确标注。",
-      "risk": "仅葡萄牙语法律域且 query 数较少，泛化到中文商业搜索仍需验证。",
-      "question": "校准评分偏差后，P@10/R@10 的不稳定性是否仍然存在？",
-      "url": "https://arxiv.org/abs/2608.27746v1"
-    },
-    {
-      "id": "2608.28241",
-      "title": "Beyond Task-Only Matching: Personalized Skill Routing with Counterfactual Evaluation",
+      "id": "2608.30553",
+      "title": "Preference Shapes Relevance: Cross-component Hierarchical Semantic Alignment for Personalized Generative Retrieval",
       "topic": "大模型 × 搜广推",
-      "placement": "Skill 路由",
-      "score": 59.9,
-      "date": "08.28",
-      "verdict": "Skill routing 不只匹配任务语义，还要判断技能是否满足用户约束。",
-      "evidence": "Top-1 75.1% · 相对基线 +23.1pt · Profile 条件 +35.1pt",
+      "placement": "个性化生成式召回",
+      "score": 74.0,
+      "date": "08.31",
+      "verdict": "层级对齐 query 与 SID、融合离散/连续用户表征，并以 single-pass residual generation 替代多步解码。",
+      "evidence": "3 个公开集 + 1 个工业集 + 在线 A/B · 摘要未披露提升和延迟数值",
       "tags": [
-        "Skill Routing",
+        "Generative Retrieval",
         "Personalization",
-        "Counterfactual"
+        "Single-Pass"
       ],
-      "level": "收藏",
-      "insight": "个性化检索评测应包含同 query、不同用户、正确答案不同的成对样本。",
-      "risk": "仅有自建 benchmark；本期 arXiv PDF 链接仍返回 404。",
-      "question": "Profile 条件如何避免泄露敏感偏好，并处理任务相关性与用户约束冲突？",
-      "url": "https://arxiv.org/abs/2608.28241v1"
+      "level": "精读",
+      "insight": "SID 可负责结构约束，连续表征保留个性化细节；single-pass generation 有机会消除 beam search 瓶颈。",
+      "risk": "摘要没有同质量、同候选规模、同硬件口径的吞吐对照，也未披露在线提升幅度。",
+      "question": "single-pass 的吞吐收益是否以候选多样性或错误恢复能力为代价？",
+      "url": "https://arxiv.org/abs/2608.30553v1"
+    },
+    {
+      "id": "2608.30333",
+      "title": "Beyond Ranking Accuracy: Evaluating LLM-Cited Feature Rationales for Next Basket Repurchase Recommendation",
+      "topic": "大模型 × 搜广推",
+      "placement": "解释评测",
+      "score": 83.81,
+      "date": "08.31",
+      "verdict": "off-the-shelf LLM 不适合直接替代监督式复购 ranker，但可作为需要独立验证的解释组件。",
+      "evidence": "2 个公开 grocery 集 + 1 个私有零售集 · LLM scorer 不及监督 ranker · 摘要未披露数值",
+      "tags": [
+        "LLM Rationale",
+        "Feature Attribution",
+        "Repurchase"
+      ],
+      "level": "泛读",
+      "insight": "解释质量与排序精度应拆开评测，生成合理理由不等于理由与模型结果有真实关联。",
+      "risk": "feature masking 会产生分布外输入，跨模型一致也不等于面向用户的解释有效。",
+      "question": "如何区分模型真正使用的特征与事后合理化的特征？",
+      "url": "https://arxiv.org/abs/2608.30333v1"
+    },
+    {
+      "id": "2608.28199",
+      "title": "Fine-Tuning Autobidders with Group Relative Policy Optimization",
+      "topic": "广告与商业化",
+      "placement": "自动竞价",
+      "score": 66.43,
+      "date": "08.28",
+      "verdict": "把 critic-free GRPO 迁移到 autobidding，从强 heuristic policy 微调以避免 actor-critic 训练不稳定。",
+      "evidence": "BAT / iPinYou / AuctionNet · clicks 持续优于基线 · conversion 最优或次优 · 无线上 A/B",
+      "tags": [
+        "Autobidding",
+        "GRPO",
+        "Reinforcement Learning"
+      ],
+      "level": "泛读",
+      "insight": "最优 bid 无监督标签时，组内相对反馈可用于增强既有 heuristic/controller，而不训练独立 critic。",
+      "risk": "公开 simulator 与真实竞价差距大，摘要未说明安全约束、离线评估偏差和噪声鲁棒数值。",
+      "question": "预算耗尽、竞价分布漂移和稀疏转化反馈下，GRPO 是否仍稳定？",
+      "url": "https://arxiv.org/abs/2608.28199v1"
+    },
+    {
+      "id": "2608.30685",
+      "title": "ATLAS: Dual-Horizon Diagnostic Evaluation for Industrial Tool-Use Agents",
+      "topic": "大模型系统与后训练",
+      "placement": "Agent 评测",
+      "score": 70.59,
+      "date": "08.31",
+      "verdict": "从单请求 trajectory 与跨轮 user interaction 两个 horizon 诊断工业工具型 agent。",
+      "evidence": "美团生产流量 · 离线 fidelity/replay + 在线 A/B · 摘要未披露提升幅度",
+      "tags": [
+        "Agent Evaluation",
+        "Trajectory",
+        "LLM Judge"
+      ],
+      "level": "泛读",
+      "insight": "最终 task success 无法定位错误发生位置，也无法评价后续交互是否持续遵循上下文。",
+      "risk": "reference 构造、judge boundary 与线上 policy feedback loop 可能引入系统偏差。",
+      "question": "诊断信号如何证明能定位可行动的能力缺口，而不只是与最终成功率相关？",
+      "url": "https://arxiv.org/abs/2608.30685v1"
+    },
+    {
+      "id": "2608.29410",
+      "title": "Agents as Knowledge Integrator and Utilizer in Multimodal Recommendation",
+      "topic": "推荐系统",
+      "placement": "多模态图推荐",
+      "score": 90.04,
+      "date": "08.29",
+      "verdict": "先把行为与多模态内容转成可复用知识记忆，再用于图构建与重排，而非直接在线调用 LLM。",
+      "evidence": "3 个 Amazon 多模态数据集 · Recall/NDCG 定性提升 · 稀疏/冷启动有效 · 无线上证据",
+      "tags": [
+        "Multimodal Rec",
+        "Knowledge Memory",
+        "Graph"
+      ],
+      "level": "泛读",
+      "insight": "可把昂贵 agent reasoning 固化为图结构与模型表征，在离线阶段复用。",
+      "risk": "摘要未披露 agent 成本、知识错误传播、刷新周期和相对强 backbone 的具体增益。",
+      "question": "去掉 agent、只用相同内容与行为信号构图后，收益还剩多少？",
+      "url": "https://arxiv.org/abs/2608.29410v1"
     }
   ]
 }
