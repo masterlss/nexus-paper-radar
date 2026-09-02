@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-09-02",
+    "generatedAt": "2026-09-02T15:00:01+08:00",
+    "volume": "VOL. 004",
+    "stats": {
+      "fetched": 216,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "大模型正在从在线主链路中的昂贵黑盒，转变为可预算的系统组件：离线 reason token、索引时多模态 enrichment、共享用户前缀，以及兼容倒排的生成关键词，都在把语义能力放到成本更合适的位置。",
+    "focus": {
+      "paperId": "2609.00986",
+      "shortTitle": "TGR",
+      "readingQuestion": "核对各模块独立增益、端到端资源开销与统一口径下的在线收益",
+      "minutes": 12
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "广告与商业化",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-01",
     "generatedAt": "2026-09-01T14:33:28+08:00",
     "volume": "VOL. 003",
