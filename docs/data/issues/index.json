@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-09-04",
+    "generatedAt": "2026-09-04T09:36:18+08:00",
+    "volume": "VOL. 005",
+    "stats": {
+      "fetched": 217,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "昂贵智能继续被移出统一在线热路径：reasoning 蒸馏到直接推荐、生成式导购采用 nearline-read、序列推荐只把困难样本路由给慢系统。与此同时，UniCon 表明重新设计输入组织单位也能带来显著生产收益。",
+    "focus": {
+      "paperId": "2609.03290",
+      "shortTitle": "UniCon",
+      "readingQuestion": "验证 Locality、Dynamics 与压缩模块的独立贡献及同算力线上收益",
+      "minutes": 10
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "广告与商业化",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-02",
     "generatedAt": "2026-09-02T15:00:01+08:00",
     "volume": "VOL. 004",

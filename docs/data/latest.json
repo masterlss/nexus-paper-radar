@@ -1,189 +1,190 @@
 {
-  "generatedAt": "2026-09-02T15:00:01+08:00",
-  "volume": "VOL. 004",
+  "generatedAt": "2026-09-04T09:36:18+08:00",
+  "volume": "VOL. 005",
   "stats": {
-    "fetched": 216,
+    "fetched": 217,
     "candidates": 12,
     "recommended": 8
   },
-  "signal": "大模型正在从在线主链路中的昂贵黑盒，转变为可预算的系统组件：离线 reason token、索引时多模态 enrichment、共享用户前缀，以及兼容倒排的生成关键词，都在把语义能力放到成本更合适的位置。",
+  "signal": "昂贵智能继续被移出统一在线热路径：reasoning 蒸馏到直接推荐、生成式导购采用 nearline-read、序列推荐只把困难样本路由给慢系统。与此同时，UniCon 表明重新设计输入组织单位也能带来显著生产收益。",
   "focus": {
-    "paperId": "2609.00986",
-    "shortTitle": "TGR",
-    "readingQuestion": "核对各模块独立增益、端到端资源开销与统一口径下的在线收益",
-    "minutes": 12
+    "paperId": "2609.03290",
+    "shortTitle": "UniCon",
+    "readingQuestion": "验证 Locality、Dynamics 与压缩模块的独立贡献及同算力线上收益",
+    "minutes": 10
   },
   "papers": [
     {
-      "id": "2609.00986",
-      "title": "TGR: Advancing Industrial Recommendation from Generative-Paradigm Ranking toward Unified Generation and Reasoning",
+      "id": "2609.03290",
+      "title": "UniCon: A Unified Context-Centric Modeling Paradigm for CTR Prediction",
+      "topic": "广告与商业化",
+      "placement": "广告 CTR 精排",
+      "score": 68.85,
+      "date": "09.03",
+      "verdict": "将历史和当前请求统一为 context unit，用上下文内/间注意力建模局部耦合与状态演化；摘要声称在美团搜索广告取得显著线上收益。",
+      "evidence": "摘要披露相对强生产基线 offline AUC +0.0139；线上 RPM +3.09%、CTR +2.07%、revenue +2.95%，且称具有统计显著性。",
+      "tags": [
+        "CTR",
+        "ContextModeling",
+        "Attention",
+        "OnlineAB",
+        "Ads"
+      ],
+      "level": "精读",
+      "insight": "统一模型可从输入组织单位入手，而不只是扩大 backbone；context unit 同时表达组内竞争与跨请求动态。",
+      "risk": "摘要未披露流量、实验周期、延迟绝对值及是否存在未来信息泄漏。",
+      "question": "Locality、Dynamics、compression 各自贡献多少，收益是否在同算力条件下获得？",
+      "url": "https://arxiv.org/abs/2609.03290v1"
+    },
+    {
+      "id": "2609.01652",
+      "title": "Not All Matches Are Equally Valuable: An Online Experiment of Retention-Focused Recommendation in a Job-Matching Platform",
       "topic": "推荐系统",
-      "placement": "精排 / 重排 / 生成式推荐",
-      "score": 134.93,
-      "date": "09.01",
-      "verdict": "用 CCFormer、生成式 semantic ID 与离线 reason token 推动工业推荐统一化；摘要声称多个模块已在腾讯生产场景上线并取得在线收益。",
-      "evidence": "摘要披露服务数亿用户；CCFormer 包含 CTR +3.57%、广告收入 +1.71%，BARGE 全量后 CTR +0.60%、阅读时长 +1.70%，HiGR 有 5× 推理加速及在线提升，TGR-Reason 有冷启动与消费指标提升。",
+      "placement": "双边匹配重排 / 留存",
+      "score": 90.43,
+      "date": "08.31",
+      "verdict": "按匹配的留存边际价值提升高流失风险用户的排序得分；真实线上实验方向性降低用户流失，但未达到常规统计显著性。",
+      "evidence": "摘要披露真实求职平台在线实验；用户侧 churn 方向性降低但不显著，企业侧未发现恶化；效应值、样本量和周期未披露。",
+      "tags": [
+        "Retention",
+        "TwoSidedMarket",
+        "Reranking",
+        "OnlineExperiment"
+      ],
+      "level": "精读",
+      "insight": "双边平台可在主排序后按边际价值做受约束校准，避免把每次 match 等价计价。",
+      "risk": "当前证据不足以确认留存收益，风险用户加权还可能改变另一侧供给分配。",
+      "question": "实验功效、置信区间和供需分层效应如何，长期留存是否真正改善？",
+      "url": "https://arxiv.org/abs/2609.01652v1"
+    },
+    {
+      "id": "2609.02170",
+      "title": "DMRL: Document-Mediated Reinforcement Learning for Skill Optimization in Advertising Recommendation",
+      "topic": "大模型系统与后训练",
+      "placement": "广告 Agent / 策略优化",
+      "score": 79.35,
+      "date": "09.02",
+      "verdict": "把 skill document 优化变成结构化编辑序列，由上层 agent 修改、冻结下层 agent 评估，并通过 DRPO 与长期回报预测处理信用分配。",
+      "evidence": "摘要称已部署于大型短视频广告平台并优于 SOTA 的关键广告指标；具体数值、流量、显著性和风险护栏未披露。",
+      "tags": [
+        "Advertising",
+        "Agent",
+        "SkillOptimization",
+        "RL",
+        "ABTesting"
+      ],
+      "level": "精读",
+      "insight": "把 prompt/skill 文档变成可审计 action space，可获得更清晰的 credit assignment 与回滚粒度。",
+      "risk": "长期 reward predictor 的偏差可能被策略利用，冻结执行器也可能导致过拟合。",
+      "question": "编辑动作、真实 A/B 奖励、长期预测奖励与安全阈值如何组合？",
+      "url": "https://arxiv.org/abs/2609.02170v1"
+    },
+    {
+      "id": "2609.03313",
+      "title": "SelfDR: Self-Distillation from Reasoning for LLM-Based Recommendation",
+      "topic": "大模型 × 搜广推",
+      "placement": "LLM 推荐 / 推理压缩",
+      "score": 85.37,
+      "date": "09.03",
+      "verdict": "用带下游奖励的 reasoner 构造 reasoning-enhanced teacher，再蒸馏为同底模、无需显式推理的直接推荐 student。",
+      "evidence": "摘要称在三个公开数据集上验证效果、合理性与效率并提供代码；具体指标、提升、token 和 latency 节省未披露。",
+      "tags": [
+        "LLMRec",
+        "SelfDistillation",
+        "Reasoning",
+        "Efficiency"
+      ],
+      "level": "精读",
+      "insight": "把 reasoning 作为训练期特权信息，可减少在线推理链和不同教师模型带来的架构差异。",
+      "risk": "rationale 未必反映真实决策因果，公开离线任务也未覆盖生产候选规模。",
+      "question": "同模型与同推理预算下，收益来自 rationale、奖励训练还是普通 distillation？",
+      "url": "https://arxiv.org/abs/2609.03313v1"
+    },
+    {
+      "id": "2609.03674",
+      "title": "LLM4AIGQ: LLM-based AI Guidance Query Generation Framework for Multi Interest Mining",
+      "topic": "大模型 × 搜广推",
+      "placement": "电商搜索 / Query 生成",
+      "score": 72.28,
+      "date": "09.03",
+      "verdict": "从用户画像和行为序列拆分多兴趣、推断消费意图并生成导购 query，采用 SFT+RL+DPO 与 nearline-generation/online-read。",
+      "evidence": "摘要称离线评估和在线 A/B 均表现稳健；数据规模、指标、提升幅度、生成覆盖率和新鲜度未披露。",
+      "tags": [
+        "QueryGeneration",
+        "Ecommerce",
+        "MultiInterest",
+        "Nearline",
+        "DPO"
+      ],
+      "level": "泛读",
+      "insight": "将生成移到 nearline 可满足搜索热路径时延，多兴趣拆分也能减少意图折叠。",
+      "risk": "兴趣和生成结果可能快速过期，多阶段训练复杂但缺少消融及线上数值。",
+      "question": "nearline 命中率、新鲜度、存储成本与在线 fallback 是什么？",
+      "url": "https://arxiv.org/abs/2609.03674v1"
+    },
+    {
+      "id": "2609.02671",
+      "title": "Recommender System as Slow and Fast Thinkers",
+      "topic": "推荐系统",
+      "placement": "序列推荐 / 自适应推理",
+      "score": 73.26,
+      "date": "09.02",
+      "verdict": "以 selector 将常规样本交给快速系统，把长历史、长尾兴趣等困难样本路由给迭代 latent refinement 的慢系统。",
+      "evidence": "摘要称在五个真实数据集上稳定改善多种 backbone，困难群体提升更大，并展示精度—效率权衡；具体数值和线上延迟未披露。",
+      "tags": [
+        "SequentialRec",
+        "AdaptiveInference",
+        "Routing",
+        "Efficiency"
+      ],
+      "level": "泛读",
+      "insight": "按样本难度分配额外计算，比所有请求统一加深模型更适合容量和分层 SLA 管理。",
+      "risk": "错误路由会损伤关键样本或尾延迟，selector 也可能产生群体偏差。",
+      "question": "同平均和 P99 预算下，相对 fixed-depth、early-exit 与级联模型的增益是多少？",
+      "url": "https://arxiv.org/abs/2609.02671v1"
+    },
+    {
+      "id": "2609.03369",
+      "title": "HypRQ-VAE: Hyperbolic Item Indexing for Long-Tail-Aware Generative Recommender Systems",
+      "topic": "推荐系统",
+      "placement": "生成式推荐 / Item 索引",
+      "score": 67.97,
+      "date": "09.03",
+      "verdict": "在双曲空间学习 residual-quantized item index，以表达长尾目录层级和稀疏性，缓解 item token 对齐与生成幻觉。",
+      "evidence": "摘要称在三个 benchmark 上显著改善推荐，尤其是 tail item，并开放代码和数据；具体指标、提升与推理成本未披露。",
       "tags": [
         "GenerativeRec",
-        "SemanticID",
-        "Ranking",
-        "Reasoning",
-        "OnlineAB"
+        "Hyperbolic",
+        "ItemIndex",
+        "LongTail",
+        "VAE"
       ],
-      "level": "精读",
-      "insight": "将语义推理离线物化为 token，同时保留 per-item 多任务输出，可在不引入请求时 rollout 的前提下增强在线推荐。",
-      "risk": "模块和指标很多，摘要未给统一基线、资源成本与实验周期；各模块收益不能直接叠加。",
-      "question": "各模块独立贡献、端到端开销和上线回退机制分别是什么？",
-      "url": "https://arxiv.org/abs/2609.00986v1"
+      "level": "泛读",
+      "insight": "对强幂律目录，item tokenizer 的几何假设可能比 decoder 规模更关键。",
+      "risk": "实现复杂且长尾收益可能牺牲 head item 或总体业务指标，缺乏线上证据。",
+      "question": "同 codebook 容量与重建误差下，双曲空间相对 Euclidean RQ-VAE 的增益来自哪里？",
+      "url": "https://arxiv.org/abs/2609.03369v1"
     },
     {
-      "id": "2609.01240",
-      "title": "From Language to Behavior: Scaling Sequence Transformers for Industrial Recommendation Ranking with Rec-Native Designs",
-      "topic": "大模型 × 搜广推",
-      "placement": "广告精排",
-      "score": 100.13,
-      "date": "09.01",
-      "verdict": "ReST 通过推荐原生序列编码和 shared-prefix 服务重构 Transformer scaling；摘要声称在 50 ms P99 内提升线上 AUC 与收入并已全量部署。",
-      "evidence": "摘要披露一周生产广告 A/B：online AUC +1.31%、核心收入指标 +11.93%，P99 低于 50 ms；样本量、显著性和硬件未披露。",
-      "tags": [
-        "Transformer",
-        "Ranking",
-        "SharedPrefix",
-        "Latency",
-        "OnlineAB"
-      ],
-      "level": "精读",
-      "insight": "将用户侧重计算做成可复用前缀，并在训练阶段模拟 compute-once/decode-many 的服务形态，是序列扩展的关键。",
-      "risk": "50 ms 的测量边界和大幅收入提升的实验口径未在摘要中说明。",
-      "question": "同参数量、同 FLOPs、同端到端 P99 下，各结构改造分别贡献多少？",
-      "url": "https://arxiv.org/abs/2609.01240v1"
-    },
-    {
-      "id": "2609.00638",
-      "title": "It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning",
-      "topic": "广告与商业化",
-      "placement": "搜索 / 广告召回",
-      "score": 68.61,
-      "date": "09.01",
-      "verdict": "CoGR 让 query/item 两侧 LLM 共同生成可供倒排直接匹配的关键词，并以交替 GRPO 优化共享 retrieval F1。",
-      "evidence": "摘要披露比较 10 个 sparse、dense、generative 基线，在内部 APP Marketplace 与 WANDS 上相对最强基线 F1 分别 +10.9% 和 +36.1%；无在线结果。",
-      "tags": [
-        "Retrieval",
-        "GRPO",
-        "InvertedIndex",
-        "KeywordGeneration"
-      ],
-      "level": "精读",
-      "insight": "显式关键词表示能复用倒排基础设施与可解释运营能力，双侧共同学习可减少 query-only expansion 的错配。",
-      "risk": "交替更新索引的成本、稳定性和时效性未披露，F1 奖励也可能偏离线上多目标。",
-      "question": "item 侧反事实奖励如何估计，索引刷新总成本能否支持生产规模？",
-      "url": "https://arxiv.org/abs/2609.00638v1"
-    },
-    {
-      "id": "2609.01316",
-      "title": "MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval",
+      "id": "2609.03554",
+      "title": "WIDE: Wildcard Inference with Dynamic Expansion for Cross-Modal Generative Retrieval",
       "topic": "搜索与排序",
-      "placement": "多模态文档召回 / 索引构建",
-      "score": 57.68,
-      "date": "09.01",
-      "verdict": "MIDR 将多模态理解前移到索引时，生成经验证的文本字段并以 BM25F/稠密融合服务，减少查询时视觉 late interaction。",
-      "evidence": "摘要披露 ViDoRe V3 五个英文域平均 nDCG 0.6219、相对 BM25 +23.0%；七域四域领先 ColQwen2.5，并声称约 9× 更小索引内存、2× 更低查询延迟。",
+      "placement": "跨模态生成召回 / 重排",
+      "score": 67.17,
+      "date": "09.03",
+      "verdict": "在解码不确定位置输出 wildcard 动态扩展候选，再融合生成置信度与语义相似度重排，减少强猜缺失视觉细节。",
+      "evidence": "摘要称在 M-BEIR 上超过 SOTA 生成式检索、降低 forced hallucination 并保持紧凑索引；具体指标、候选膨胀率和延迟未披露。",
       "tags": [
-        "MultimodalIR",
-        "Indexing",
-        "BM25F",
-        "Latency",
-        "RAG"
-      ],
-      "level": "精读",
-      "insight": "对低更新、高查询量文档库，把昂贵理解前移到 ingestion 可换取更简单可控的在线检索链路。",
-      "risk": "索引构建成本、验证机制和 enrichment 错误固化问题未在摘要中量化。",
-      "question": "计入构建、更新和纠错成本后，内存与延迟优势是否仍成立？",
-      "url": "https://arxiv.org/abs/2609.01316v1"
-    },
-    {
-      "id": "2609.00913",
-      "title": "SwapRec: Warming Up Cold Items Through Training-Time Swaps",
-      "topic": "推荐系统",
-      "placement": "实时个性化 / 冷启动",
-      "score": 79.88,
-      "date": "09.01",
-      "verdict": "把线上冷 item 到暖近邻的 swap 同步用于训练，以较低改造成本缓解序列推荐的 train-serving mismatch。",
-      "evidence": "摘要称在电商、电影、音乐三类推荐域以及不同序列架构上均提高准确率和冷 item 推荐比例；具体数据集、指标和提升幅度未披露。",
-      "tags": [
-        "ColdStart",
-        "SequentialRec",
-        "TrainingAugmentation",
-        "Personalization"
+        "CrossModal",
+        "GenerativeRetrieval",
+        "Wildcard",
+        "Reranking"
       ],
       "level": "泛读",
-      "insight": "已有线上启发式可以转化为训练增强，先通过小流量实验验证近邻质量和实时兴趣更新收益。",
-      "risk": "错误近邻会污染兴趣表示，提高冷 item 占比也不等于长期业务价值提升。",
-      "question": "收益来自鲁棒训练还是额外曝光，近邻质量下降时是否仍稳定？",
-      "url": "https://arxiv.org/abs/2609.00913v1"
-    },
-    {
-      "id": "2609.01067",
-      "title": "World Model-Guided Reinforcement Learning via Counterfactual User Engagement Simulation",
-      "topic": "大模型 × 搜广推",
-      "placement": "推荐策略优化 / 用户模拟",
-      "score": 57.0,
-      "date": "09.01",
-      "verdict": "用冻结的用户参与世界模型对同状态候选做并行反事实预测并生成 dense reward，降低真实用户在线探索成本。",
-      "evidence": "摘要声称奖励信号可跨域迁移，1.7B 学生策略在推荐任务上匹配或超过更大 LLM；数据集、指标、模型对照和线上验证未披露。",
-      "tags": [
-        "WorldModel",
-        "ReinforcementLearning",
-        "UserSimulation",
-        "Counterfactual"
-      ],
-      "level": "泛读",
-      "insight": "可在真实流量前用反事实模拟做策略预训练或候选预筛选，但需用在线数据持续校准 reward model。",
-      "risk": "simulator bias 和 reward hacking 可能使离线提升无法转化为真实长期价值。",
-      "question": "如何检测策略利用模拟器，模拟奖励与真实用户结果的相关性多高？",
-      "url": "https://arxiv.org/abs/2609.01067v1"
-    },
-    {
-      "id": "2609.01325",
-      "title": "VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models",
-      "topic": "搜索与排序",
-      "placement": "排序安全 / RAG 防护",
-      "score": 63.69,
-      "date": "09.01",
-      "verdict": "将语料投毒建模为兼顾排名扭曲和事实腐化的 RLVR，展示神经排序与 RAG 对流畅恶意文档的潜在脆弱性。",
-      "evidence": "摘要声称对多种 neural ranker 和一个商业 embedding 模型达到接近完美的攻击成功率，并显著降低下游 RAG 表现；具体 ASR、注入比例和防御对照未披露。",
-      "tags": [
-        "RankingSecurity",
-        "CorpusPoisoning",
-        "RLVR",
-        "RAG"
-      ],
-      "level": "泛读",
-      "insight": "索引入口治理需要超越流畅度检测，加入来源信誉、异常优化特征、事实一致性和排名敏感度测试。",
-      "risk": "结果高度依赖攻击者权限、注入预算和评测协议，商业模型部分难以复现。",
-      "question": "启用现实垃圾检测与索引治理后，攻击成功率还剩多少？",
-      "url": "https://arxiv.org/abs/2609.01325v1"
-    },
-    {
-      "id": "2609.00618",
-      "title": "Towards Effective Structured Context Modeling for Conversational Recommender Systems via Dual-node Monte Carlo Tree Search",
-      "topic": "推荐系统",
-      "placement": "对话推荐 / 查询生成",
-      "score": 78.1,
-      "date": "09.01",
-      "verdict": "DREAMS 用双节点树拆分偏好探索与利用：MCTS 选择对话动作，LLM 将偏好状态细化为结构化检索查询。",
-      "evidence": "摘要仅称在 benchmark 数据集上进行了广泛实验并验证设计有效；数据集、指标、提升、推理成本和线上结果均未披露。",
-      "tags": [
-        "ConversationalRec",
-        "MCTS",
-        "PreferenceTracking",
-        "QueryGeneration"
-      ],
-      "level": "收藏",
-      "insight": "分别管理继续询问与当前检索两个策略，有助于独立施加收益、成本和早退约束。",
-      "risk": "MCTS 与 LLM 叠加可能产生较高时延，离线 benchmark 难覆盖真实用户拒答和偏好漂移。",
-      "question": "同 token/latency 预算下，相对简单状态机或摘要记忆是否仍有显著增益？",
-      "url": "https://arxiv.org/abs/2609.00618v1"
+      "insight": "显式未知分支加二阶段相似度，可作为生成式检索在信息不对称时的可控降级机制。",
+      "risk": "wildcard 会扩大候选并把压力转给重排，阈值跨域稳定性和最坏延迟未知。",
+      "question": "同召回量、端到端延迟和索引大小下，相对大 beam 或 hybrid retrieval 是否仍占优？",
+      "url": "https://arxiv.org/abs/2609.03554v1"
     }
   ]
 }
