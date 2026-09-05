@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-09-05",
+    "generatedAt": "2026-09-05T20:00:47+08:00",
+    "volume": "VOL. 006",
+    "stats": {
+      "fetched": 222,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "本期最清晰的工程趋势是把隐含结构变成显式可控对象：hLLM 用 assignment 取代串行解码，Spruce 联合优化二进制表示与密码协议，增量 pooled evaluation 则把检索判断沉淀为可持续复用的评测资产。",
+    "focus": {
+      "paperId": "2609.01807",
+      "shortTitle": "hLLM",
+      "readingQuestion": "验证 28 ms 与 64× 加速在不同候选规模、硬件和端到端质量下是否成立",
+      "minutes": 10
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "广告与商业化",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-04",
     "generatedAt": "2026-09-04T09:36:18+08:00",
     "volume": "VOL. 005",
