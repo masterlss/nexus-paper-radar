@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-09-08",
+    "generatedAt": "2026-09-08T09:04:27+08:00",
+    "volume": "VOL. 007",
+    "stats": {
+      "fetched": 212,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "工业搜推正在把大模型能力拆成可维护、可审计的小组件：离线 reasoning 蒸馏、原子记忆、分层知识与确定性控制器负责长期流程；Embedding Surgery 进一步表明索引本身也可以局部反馈驱动地更新。",
+    "focus": {
+      "paperId": "2609.05110",
+      "shortTitle": "Embedding Surgery",
+      "readingQuestion": "验证连续局部更新后的空间稳定性、ANN 一致性、版本化与回滚机制",
+      "minutes": 9
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "广告与商业化",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-05",
     "generatedAt": "2026-09-05T20:00:47+08:00",
     "volume": "VOL. 006",
