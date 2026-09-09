@@ -1,5 +1,28 @@
 [
   {
+    "date": "2026-09-09",
+    "generatedAt": "2026-09-09T09:03:30+08:00",
+    "volume": "VOL. 008",
+    "stats": {
+      "fetched": 60,
+      "candidates": 12,
+      "recommended": 7
+    },
+    "signal": "本期仅大模型系统主题成功采集。核心趋势是 Agent routing 与 orchestration 从相似度 top-k 和固定图，转向互补集合选择、任务条件时序图，以及同一 typed workflow 在实时、异步和批处理 substrate 之间切换。",
+    "focus": {
+      "paperId": "2609.06027",
+      "shortTitle": "HAE-GEO",
+      "readingQuestion": "验证哪些防御能把证据识别与交叉验证真正转化为最终 recommendation recovery",
+      "minutes": 10
+    },
+    "paperCount": 7,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-08",
     "generatedAt": "2026-09-08T09:04:27+08:00",
     "volume": "VOL. 007",
