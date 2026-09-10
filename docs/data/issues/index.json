@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-09-10",
+    "generatedAt": "2026-09-10T09:02:38+08:00",
+    "volume": "VOL. 009",
+    "stats": {
+      "fetched": 219,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "长序列推荐的瓶颈已从 attention 复杂度扩展到特征存储、通信、跨请求缓存和 fused kernel；与此同时，统一排序 backbone 正把多任务信号推进每一层，而不是只在末端分 tower。",
+    "focus": {
+      "paperId": "2609.08443",
+      "shortTitle": "SequenceO1",
+      "readingQuestion": "核对 100K 序列下 Sketch、短期分支、低秩缓存和系统优化的独立收益与 P99",
+      "minutes": 10
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "广告与商业化",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-09",
     "generatedAt": "2026-09-09T09:03:30+08:00",
     "volume": "VOL. 008",
