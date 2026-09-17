@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-09-17",
+    "generatedAt": "2026-09-17T09:01:34+08:00",
+    "volume": "VOL. 010",
+    "stats": {
+      "fetched": 219,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "生成式搜推的务实路线正在成形：保留现有终排、价值函数和 serving，将生成模型放在候选生成、listwise 优化、展示层探索或 post-hoc verifier 等可插拔位置，而不是整体替换成熟链路。",
+    "focus": {
+      "paperId": "2609.14493",
+      "shortTitle": "VARG",
+      "readingQuestion": "拆解 ID 稳定、三阶段 SFT 与 Prefix-GRPO 对同配额线上 GMV 的独立贡献",
+      "minutes": 9
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "广告与商业化",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-10",
     "generatedAt": "2026-09-10T09:02:38+08:00",
     "volume": "VOL. 009",
