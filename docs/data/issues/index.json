@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-09-19",
+    "generatedAt": "2026-09-19T22:30:10+08:00",
+    "volume": "VOL. 012",
+    "stats": {
+      "fetched": 219,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "搜广推和 agent 检索正在从固定组件转向按查询、状态和资源预算自适应：CoFree 保留 embedding 的推理能力，SELF-INDEX 演化索引，MIMA 让多兴趣通过集合级监督分化，DRAG 则动态选择 retriever 与 generator。线上落地的关键仍是把收益拆解到延迟、刷新、回退和成本预算。",
+    "focus": {
+      "paperId": "2609.20563",
+      "shortTitle": "CoFree",
+      "readingQuestion": "双奖励训练带来的 nDCG 与线上收益，是否在相同推理成本下成立，还是主要来自更多 token、模型容量或数据配方？",
+      "minutes": 9
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-18",
     "generatedAt": "2026-09-18T09:06:23+08:00",
     "volume": "VOL. 011",
