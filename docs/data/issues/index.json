@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-10-02",
+    "generatedAt": "2026-10-02T13:30:39+08:00",
+    "volume": "VOL. 013",
+    "stats": {
+      "fetched": 217,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "生成式推荐和 RAG 正从“单模型效果”转向可控的系统闭环：tokenizer、generator、reranker、用户表示和评估策略都开始按查询、消费状态或资源预算自适应。生产落地的关键是同时约束质量、覆盖、新颖性、P99、刷新成本和可回退性。",
+    "focus": {
+      "paperId": "2609.39327",
+      "shortTitle": "GEAR",
+      "readingQuestion": "BasisVQ、PrefixBasisRQ 和 context-conditioned reranking 在相同流量配额和 serving 预算下分别贡献多少，collapse/collision 指标如何映射到线上收益？",
+      "minutes": 9
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-09-19",
     "generatedAt": "2026-09-19T22:30:10+08:00",
     "volume": "VOL. 012",
