@@ -1,5 +1,29 @@
 [
   {
+    "date": "2026-10-05",
+    "generatedAt": "2026-10-05T09:13:14+08:00",
+    "volume": "VOL. 014",
+    "stats": {
+      "fetched": 218,
+      "candidates": 12,
+      "recommended": 8
+    },
+    "signal": "LLM 推荐正在从全量替换转向可验证、可路由、可回退的分阶段接入：PROVE-REC 约束证据对偏好和排序的真实影响，GRP 以召回源和旁路逐步部署生成式模型，用户画像和模态也按消费状态或 query 粒度选择。线上判断需要同时看相关性、覆盖、新颖性、延迟和成本。",
+    "focus": {
+      "paperId": "2609.36688",
+      "shortTitle": "GRP",
+      "readingQuestion": "retrieval-only、early-ranking bypass 和 source replacement 各自贡献多少，latency -69% 与线上收益是否在相同流量、P99 和平台护栏下成立？",
+      "minutes": 9
+    },
+    "paperCount": 8,
+    "topics": [
+      "大模型 × 搜广推",
+      "大模型系统与后训练",
+      "推荐系统",
+      "搜索与排序"
+    ]
+  },
+  {
     "date": "2026-10-02",
     "generatedAt": "2026-10-02T13:30:39+08:00",
     "volume": "VOL. 013",
